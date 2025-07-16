@@ -1,28 +1,54 @@
-# Sentiment Analysis
+# Amazon Review Sentiment Classifier
 
-This is a sentiment analysis for Amazon food reviews using Bert, embeddings and other NLP approaches. This project was done in the context of a class on NLP during the master of AI at the university of Paris-Saclay.
+This project applies Natural Language Processing (NLP) techniques to classify Amazon food reviews into three sentiment categories: **Positive**, **Neutral**, and **Negative**. It includes both traditional vectorization methods and modern transformer-based models.
 
 ## Dataset
 
-The project is based on the Amazon food review from customers dataset. The dataset comes from a Kaggle competition. It can be downloaded from <a href="https://www.kaggle.com/snap/amazon-fine-food-reviews/download" > here </a>(254MB).
+The dataset used contains Amazon food reviews and is available publicly on Kaggle. It includes review texts and their associated sentiment labels.
 
-## Task
+## Objective
 
-This is a multi-class classification. Reviews should be classified into three classes <b>Negative</b>, <b>Positive</b>, <b>Neutral</b>.
+The goal is to build a **multi-class classifier** that predicts sentiment based on review text. The task is framed as a supervised learning problem with three target classes.
 
-## Used approaches
+## Approach
 
-- Simple vectorization approaches: CountVectorizer and Tf-idf with Scikit-learn.
-- Different Pretrained Word Embeddings: Glove, Word2Vec and FastText with Gensim.
-- Different visualization approaches: PCA, t-SNE
-- Bert embeddings (DistilBERT) with Transformers - Hugging Face.
-- Fine-tuned Bert with pyTorch.
+Several techniques were used and compared:
+
+- **Text Vectorization**:  
+  - CountVectorizer and TF-IDF using Scikit-learn
+
+- **Word Embeddings**:  
+  - Pre-trained embeddings like GloVe, Word2Vec, and FastText with Gensim
+
+- **Dimensionality Reduction & Visualization**:  
+  - PCA and t-SNE for vector visualization
+
+- **Transformer-based Models**:  
+  - DistilBERT embeddings via Hugging Face  
+  - Fine-tuned DistilBERT model using PyTorch
 
 ## Results
 
-| Method                                   | F1 macro avg. |
-| ---------------------------------------- | :-----------: |
-| Glove embeddings + SGD                   |     0.46      |
-| DistilBERT embeddings + SGD              |     0.566     |
-| DistilBERT embeddings + Logistic + stack |     0.69      |
-| DistliBERT Fine-tuned                    |     0.75      |
+| Method                                 | F1 Score (Macro Avg.) |
+|----------------------------------------|------------------------|
+| GloVe + SGD                            | 0.46                   |
+| DistilBERT Embeddings + SGD            | 0.566                  |
+| DistilBERT Embeddings + Logistic Stack | 0.69                   |
+| Fine-tuned DistilBERT                  | **0.75**               |
+
+## Tools & Libraries
+
+- Python  
+- Scikit-learn  
+- PyTorch  
+- Hugging Face Transformers  
+- Gensim  
+- Matplotlib / Seaborn  
+- SHAP (for model interpretability)
+
+## Author
+
+Abdelrahman Abdelgawad  
+M.Eng. Data Science — TU Darmstadt  
+📧 abdelrahmansaeed291@gmail.com
+
